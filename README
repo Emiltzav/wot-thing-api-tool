@@ -1,5 +1,6 @@
-This tool is created in the context of my thesis. 
-It runs on development setup and need configuration to be deployed for public access.
+This tool was developed as part of the postgraduate thesis of Manousos Boliotis and the PhD research of Aimilios Tzavaras, under the supervision of Professor Euripides Petrakis and Lab Instructor Chrysi Tsinaraki, at the Intelligent Systems Laboratory of the Technical University of Crete.
+
+It runs on a development setup and needs configuration to be deployed for public access.
 
 For simplicity purposes, ports and hosts are defined as constant variables inside the function needing them (This is not safe for production).
 
@@ -7,10 +8,10 @@ Run Instructions:
 
 a) Run backend server steps:
     
-    1) Enable python virtual environment: venv/Scripts/activate
+    1) Enable Python virtual environment: venv/Scripts/activate
     2) Run uvicorn server (port 8080): python -m uvicorn main:app --host 0.0.0.0 --port 8080 --reload
 
 b) Run frontend steps:
 
-    1) Navigate into Frontend/wotemulator
+    1) Navigate to Frontend/wotemulator
     2) Run: npm run dev
