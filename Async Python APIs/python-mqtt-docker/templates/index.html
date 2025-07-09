@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQTT Publisher</title>
+    <script>
+        function publishMeasurements() {
+            fetch('/publish', { method: 'POST' })
+                .then(response => response.text())
+                .then(data => alert(data));
+        }
+    </script>
+</head>
+<body>
+    <h1>MQTT Publisher</h1>
+    <button onclick="publishMeasurements()">Publish Measurements</button>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "node": {
+    "7f13c9e9d31719b94df196c73affa5590e57f52cd5": {
+      "workers": {
+        "app/home/page": {
+          "moduleId": "[project]/.next-internal/server/app/home/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/api/apiCommunicator.tsx [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/home/page": "action-browser"
+      }
+    }
+  },
+  "edge": {}
+}

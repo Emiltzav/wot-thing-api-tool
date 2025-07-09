@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  hivemq:
+    image: hivemq/hivemq4
+    container_name: hivemq
+    ports:
+      - "1883:1883"   # MQTT (non-secure)
+      - "8883:8883"   # MQTT over SSL/TLS (secure)
+      - "8000:8000"   # WebSocket
+      - "8001:8001"   # WebSocket over SSL/TLS (secure)
+      - "8080:8080"   # Admin UI (optional)
+    environment:
+      - Hivemq__Listener__Default__Port=1883
+      - Hivemq__Listener__WebSocket__Port=8000  # WebSocket Port
+      - Hivemq__Listener__WebSocket__Enabled=true
+    networks:
+      my_net:
+        ipv4_address: "172.16.0.10"
+    volumes: 
+      - hivemq-data:/opt/hivemq/data # Persistent storage for HiveMQ
+     
+
+  flask-app:
+    build: .
+    container_name: flask-app
+    ports:
+      - "5000:5000" 
+    volumes:
+      - .:/app
+    depends_on:
+      - hivemq 
+    working_dir: /app
+    entrypoint: ["tail", "-f", "/dev/null"] # Keeps the container running
+    networks:
+      my_net:
+        ipv4_address: "172.16.0.5"
+
+volumes:
+  hivemq-data: 
+
+networks:
+  my_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.0.0/16"

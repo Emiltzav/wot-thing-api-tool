@@ -1,0 +1,5 @@
+{
+  "/home/page": "app/home/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/kafka/page": "app/kafka/page.js"
+}

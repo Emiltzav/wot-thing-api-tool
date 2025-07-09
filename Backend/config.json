@@ -1,0 +1,7 @@
+{
+    "KAFKA_DOCKER_COMPOSE_PATH": "../Async Python APIs/python-kafka-docker-main/docker-compose.yml",
+
+    "KAFKA_MESSAGES_PATH":"../Async Python APIs/python-kafka-docker-main/publisher/app/core/models/userDefinedMessages.py",
+    
+    "KAFKA_ROUTES_PATH":"../Async Python APIs/python-kafka-docker-main/publisher/app/routers/publisher.py" 
+}
